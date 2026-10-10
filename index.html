@@ -7,15 +7,18 @@
 <meta name="description" content="Bacco Wines, Monopoli: degustazioni guidate, serate a tema e calici selezionati. Prenota il tuo posto.">
 <meta property="og:title" content="Bacco Wines — Degustazioni a Monopoli">
 <meta property="og:description" content="Degustazioni guidate e serate a tema. Prenota online.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta name="robots" content="index,follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231b3a26'/%3E%3Cstop offset='1' stop-color='%230e2417'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='32' fill='url(%23g)'/%3E%3Cg fill='none' stroke='%23f2efe4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 16v32'/%3E%3Cpath d='M28 16v32'/%3E%3Cpath d='M28 16h9a8 8 0 010 16h-9'/%3E%3Cpath d='M28 32h10a8 8 0 010 16H28'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231b3a26'/%3E%3Cstop offset='1' stop-color='%230e2417'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='32' fill='url(%23g)'/%3E%3Cg fill='none' stroke='%23f2efe4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 16v32'/%3E%3Cpath d='M28 16v32'/%3E%3Cpath d='M28 16h9a8 8 0 010 16h-9'/%3E%3Cpath d='M28 32h10a8 8 0 010 16H28'/%3E%3C/g%3E%3C/svg%3E">
+<meta name="theme-color" content="#12201e">
+<!-- Nessuna risorsa da terze parti: nessun font remoto, nessuna analitica,
+     nessun cookie di profilazione. Per questo il sito non ha banner cookie. -->
 <style>
 :root{
   --nero:#12201e; --vino:#2d5551; --vino-ch:#3a6b66; --oro:#c2b280; --oro-ch:#dcd0a8;
   --crema:#f6f4ef; --crema-sc:#e2ddd2; --testo:#23302e; --grigio:#7d8a86;
-  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
-  --sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --serif:'Iowan Old Style','Palatino Linotype',Palatino,'Book Antiqua',Georgia,'Times New Roman',serif;
+  --sans:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -132,7 +135,37 @@ body{font-family:var(--sans);background:var(--crema);color:var(--testo);line-hei
   margin-bottom:11px;font-weight:600}
 .c-blocco p,.c-blocco a{font-family:var(--serif);font-size:18px;color:var(--testo);text-decoration:none;line-height:1.6}
 .c-blocco a:hover{color:var(--vino)}
-footer{background:var(--nero);color:rgba(247,242,234,.45);text-align:center;padding:44px 24px;font-size:12.5px}
+footer{background:var(--nero);color:rgba(247,242,234,.45);text-align:center;padding:44px 24px 36px;font-size:12.5px}
+footer .legale{max-width:620px;margin:18px auto 0;line-height:1.75;font-size:11.5px;color:rgba(247,242,234,.38)}
+footer .link-legali{margin-top:16px;display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+footer .link-legali button{background:none;border:0;padding:0;font:inherit;color:rgba(247,242,234,.62);
+  text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+footer .link-legali button:hover{color:var(--oro-ch)}
+
+/* ── Pagine informative (privacy / note legali) ── */
+.info{position:fixed;inset:0;z-index:120;background:rgba(10,18,17,.72);backdrop-filter:blur(4px);
+  display:none;overflow-y:auto;padding:40px 18px}
+.info.on{display:block}
+.info-box{max-width:760px;margin:0 auto;background:var(--crema);border-radius:14px;padding:40px 36px 46px;position:relative;
+  box-shadow:0 30px 80px rgba(0,0,0,.4)}
+.info-box h2{font-family:var(--serif);font-size:30px;font-weight:400;margin-bottom:6px;color:var(--nero)}
+.info-box .agg{font-size:12px;color:var(--grigio);margin-bottom:26px}
+.info-box h3{font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.09em;
+  margin:26px 0 8px;color:var(--vino)}
+.info-box p,.info-box li{font-size:14.5px;line-height:1.75;color:var(--testo)}
+.info-box ul{margin:8px 0 0 20px}
+.info-box li{margin-bottom:5px}
+.info-box a{color:var(--vino);text-decoration:underline;text-underline-offset:2px}
+.info-box .chiudi-x{position:absolute;top:16px;right:18px;background:none;border:0;font-size:30px;
+  line-height:1;color:var(--grigio);cursor:pointer}
+.info-box .chiudi-x:hover{color:var(--nero)}
+@media(max-width:620px){.info-box{padding:34px 22px 40px}.info-box h2{font-size:25px}}
+
+/* ── Consenso privacy nel modulo ── */
+.consenso{display:flex;gap:10px;align-items:flex-start;margin:18px 0 4px;cursor:pointer;
+  font-size:12.5px;line-height:1.6;color:var(--grigio);text-transform:none;letter-spacing:0}
+.consenso input{width:auto!important;margin:2px 0 0;flex:0 0 auto;accent-color:var(--vino)}
+.consenso a{color:var(--vino);text-decoration:underline;text-underline-offset:2px}
 footer .nome{font-family:var(--serif);font-size:26px;color:var(--crema);margin-bottom:9px;font-weight:300;letter-spacing:.02em}
 
 /* ── Modale ─────────────────────────────── */
@@ -297,7 +330,162 @@ textarea{resize:vertical;min-height:52px}
 <footer>
   <div class="nome" style="font-family:var(--sans);font-weight:300;letter-spacing:.14em">BACCO <span style="font-size:14px;letter-spacing:.4em;opacity:.7">WINES</span></div>
   <div>Monopoli &middot; Puglia &nbsp;·&nbsp; Degustazioni su prenotazione, posti limitati</div>
+  <div class="legale" id="f-legale"></div>
+  <div class="link-legali">
+    <button onclick="mostraInfo('privacy')">Informativa privacy</button>
+    <button onclick="mostraInfo('note')">Note legali</button>
+    <button onclick="mostraInfo('cookie')">Cookie</button>
+  </div>
+  <div class="legale" style="margin-top:14px;opacity:.55">&copy; <span id="f-anno"></span> <span class="f-rag"></span> — Tutti i diritti riservati</div>
 </footer>
+
+<!-- ══ INFORMATIVA PRIVACY ══ -->
+<div class="info" id="info-privacy">
+  <div class="info-box">
+    <button class="chiudi-x" onclick="chiudiInfo()" aria-label="Chiudi">&times;</button>
+    <h2>Informativa privacy</h2>
+    <div class="agg">Ai sensi degli artt. 13 e 14 del Regolamento UE 2016/679 (GDPR) — ultimo aggiornamento: <span class="f-oggi"></span></div>
+
+    <h3>1. Titolare del trattamento</h3>
+    <p><span class="f-rag"></span><br>
+      <span class="f-sede"></span><br>
+      P.IVA <span class="f-piva"></span><br>
+      E-mail: <a class="f-mail-a" href="#"><span class="f-mail"></span></a> · Telefono: <span class="f-tel"></span></p>
+
+    <h3>2. Quali dati raccogliamo</h3>
+    <p>Quando prenoti una degustazione da questo sito ci comunichi:</p>
+    <ul>
+      <li><b>nome e cognome</b> — per intestare la prenotazione;</li>
+      <li><b>numero di telefono</b> — per confermarti il posto o avvisarti di variazioni;</li>
+      <li><b>numero di persone</b> e <b>data della serata</b> scelta;</li>
+      <li><b>note facoltative</b> che decidi di scriverci (ad esempio allergie o intolleranze).</li>
+    </ul>
+    <p>Se nelle note indichi allergie o intolleranze alimentari, stai conferendo un dato relativo alla
+      salute (art. 9 GDPR): lo trattiamo solo con il tuo consenso esplicito e al solo scopo di servirti
+      in sicurezza. Puoi evitare di indicarlo e comunicarcelo a voce in loco.</p>
+    <p>Il sito <b>non</b> usa cookie di profilazione, non installa strumenti di analisi o pubblicitari e
+      non carica risorse da server di terze parti.</p>
+
+    <h3>3. Perché li trattiamo e su quale base giuridica</h3>
+    <ul>
+      <li><b>Gestire la prenotazione e contattarti per la conferma</b> — base giuridica: esecuzione di
+        misure precontrattuali e del contratto richiesto da te (art. 6.1.b GDPR).</li>
+      <li><b>Allergie e intolleranze eventualmente indicate</b> — base giuridica: tuo consenso
+        esplicito (art. 9.2.a GDPR), revocabile in qualsiasi momento.</li>
+      <li><b>Adempimenti fiscali e contabili</b>, quando la serata genera un corrispettivo —
+        base giuridica: obbligo di legge (art. 6.1.c GDPR).</li>
+    </ul>
+    <p>Non inviamo comunicazioni commerciali o newsletter sulla base di questo modulo.</p>
+
+    <h3>4. Conferire i dati è obbligatorio?</h3>
+    <p>Nome e telefono sono necessari: senza di essi non possiamo confermare la prenotazione.
+      Le note sono facoltative.</p>
+
+    <h3>5. A chi vengono comunicati</h3>
+    <p>I dati sono accessibili al titolare e al personale autorizzato del locale. Per la sola
+      trasmissione del modulo e la conservazione tecnica della prenotazione ci avvaliamo di
+      fornitori di servizi informatici che agiscono come responsabili del trattamento ai sensi
+      dell'art. 28 GDPR (servizi di hosting del sito e di script di raccolta dei moduli).
+      I dati non vengono diffusi, né venduti, né cedati a terzi per finalità di marketing.</p>
+    <p>I fornitori utilizzati possono comportare un trasferimento verso Paesi terzi: in tal caso
+      avviene sulla base delle clausole contrattuali standard approvate dalla Commissione europea
+      o di una decisione di adeguatezza.</p>
+
+    <h3>6. Per quanto tempo li conserviamo</h3>
+    <p>I dati della prenotazione sono conservati per il tempo necessario alla serata e, al massimo,
+      <b>12 mesi</b> dalla data dell'evento, per gestire eventuali contestazioni. I documenti
+      fiscali e contabili sono conservati per <b>10 anni</b>, come richiesto dalla legge.
+      Terminati questi periodi i dati vengono cancellati o resi anonimi.</p>
+
+    <h3>7. I tuoi diritti</h3>
+    <p>Puoi in ogni momento chiedere l'accesso ai tuoi dati, la loro rettifica o cancellazione,
+      la limitazione del trattamento, la portabilità, e opporti al trattamento; puoi inoltre
+      revocare il consenso prestato, senza che ciò pregiudichi la liceità del trattamento già
+      effettuato. Scrivi a <a class="f-mail-a" href="#"><span class="f-mail"></span></a>: ti
+      risponderemo entro 30 giorni.</p>
+    <p>Se ritieni che il trattamento violi la normativa puoi proporre reclamo al
+      <b>Garante per la protezione dei dati personali</b> (<a href="https://www.garanteprivacy.it"
+      target="_blank" rel="noopener">garanteprivacy.it</a>) o ricorrere all'autorità giudiziaria.</p>
+
+    <h3>8. Processi automatizzati</h3>
+    <p>Non effettuiamo profilazione né decisioni interamente automatizzate sui tuoi dati.</p>
+
+    <h3>9. Minori</h3>
+    <p>Il servizio è rivolto a maggiorenni. La somministrazione di bevande alcoliche a minori di
+      18 anni è vietata dalla legge: non raccogliamo intenzionalmente dati di minori.</p>
+  </div>
+</div>
+
+<!-- ══ NOTE LEGALI ══ -->
+<div class="info" id="info-note">
+  <div class="info-box">
+    <button class="chiudi-x" onclick="chiudiInfo()" aria-label="Chiudi">&times;</button>
+    <h2>Note legali</h2>
+    <div class="agg">Informazioni richieste dall'art. 2250 c.c. e dal D.lgs. 70/2003 (art. 7)</div>
+
+    <h3>Dati del titolare</h3>
+    <p><span class="f-rag"></span><br>
+      Sede: <span class="f-sede"></span><br>
+      Partita IVA e Codice Fiscale: <span class="f-piva"></span><br>
+      <span class="f-rea"></span>
+      E-mail: <a class="f-mail-a" href="#"><span class="f-mail"></span></a><br>
+      Telefono: <span class="f-tel"></span></p>
+
+    <h3>Prenotazioni</h3>
+    <p>La richiesta inviata da questo sito è una <b>proposta di prenotazione</b> e non costituisce
+      conferma: la prenotazione si intende perfezionata solo quando la confermiamo per telefono o
+      per messaggio. I posti sono limitati e assegnati in ordine di arrivo.</p>
+    <p>Puoi disdire gratuitamente contattandoci almeno <b>24 ore</b> prima dell'orario di inizio.
+      In caso di mancata presentazione senza disdetta potremmo non accettare prenotazioni successive.
+      Se siamo noi ad annullare la serata, sei libero da ogni impegno e ti rimborsiamo integralmente
+      quanto eventualmente versato.</p>
+    <p>I prezzi indicati sono per persona e comprensivi di IVA. Il programma dei vini può subire
+      variazioni per indisponibilità di annate o bottiglie: in tal caso proponiamo etichette di
+      pari livello.</p>
+
+    <h3>Consumo responsabile</h3>
+    <p>Le degustazioni prevedono la somministrazione di bevande alcoliche e sono riservate ai
+      <b>maggiori di 18 anni</b>. Ti invitiamo a un consumo consapevole e a non mettersi alla
+      guida dopo aver bevuto.</p>
+
+    <h3>Contenuti del sito</h3>
+    <p>Testi, immagini, marchio e grafica di questo sito sono di proprietà del titolare e non
+      possono essere riprodotti senza autorizzazione. Le informazioni sono fornite con la massima
+      cura ma possono contenere imprecisioni o non essere aggiornate; fanno sempre fede le
+      condizioni comunicate al momento della conferma.</p>
+
+    <h3>Risoluzione delle controversie</h3>
+    <p>Per ogni controversia si applica la legge italiana. Il consumatore può rivolgersi
+      all'organismo di mediazione competente per il luogo di residenza o avvalersi della
+      piattaforma europea di risoluzione delle controversie online.</p>
+
+    <h3>Accessibilità e segnalazioni</h3>
+    <p>Per segnalare un contenuto errato, un problema di accessibilità o richiedere la rimozione
+      di un'immagine, scrivi a <a class="f-mail-a" href="#"><span class="f-mail"></span></a>.</p>
+  </div>
+</div>
+
+<!-- ══ COOKIE ══ -->
+<div class="info" id="info-cookie">
+  <div class="info-box">
+    <button class="chiudi-x" onclick="chiudiInfo()" aria-label="Chiudi">&times;</button>
+    <h2>Cookie</h2>
+    <div class="agg">Informativa ai sensi dell'art. 122 del Codice privacy e delle Linee guida del Garante</div>
+    <h3>Questo sito non usa cookie</h3>
+    <p>Non installiamo cookie di profilazione, non usiamo strumenti statistici o pubblicitari,
+      non ci sono pulsanti social che ti tracciano e non carichiamo font, mappe o video da server
+      di altri soggetti. Per questo non vedi alcun banner di consenso: non c'è nulla da consentire.</p>
+    <h3>Cosa succede quando prenoti</h3>
+    <p>Il modulo di prenotazione invia i dati che hai scritto direttamente al nostro sistema di
+      gestione. Non viene salvato nulla nel tuo browser per finalità di tracciamento. Il nostro
+      fornitore di hosting può conservare per brevi periodi registri tecnici di accesso
+      (indirizzo IP, data e ora, pagina richiesta) per esigenze di sicurezza e funzionamento,
+      sulla base del legittimo interesse a mantenere il servizio sicuro.</p>
+    <h3>Come gestire i cookie nel browser</h3>
+    <p>In ogni caso puoi bloccare o cancellare i cookie dalle impostazioni del tuo browser.
+      Le istruzioni si trovano nella sezione "privacy" o "sicurezza" delle preferenze.</p>
+  </div>
+</div>
 
 <!-- ══ MODALE ══ -->
 <div class="modale" id="modale">
@@ -315,6 +503,13 @@ textarea{resize:vertical;min-height:52px}
         <select id="persone"></select>
         <label for="note">Note <span style="text-transform:none;letter-spacing:0">(allergie, intolleranze, occasioni)</span></label>
         <textarea id="note" rows="2" placeholder="Facoltativo"></textarea>
+        <label class="consenso" for="consenso">
+          <input type="checkbox" id="consenso">
+          <span>Ho letto l'<a href="#" onclick="mostraInfo('privacy');return false">informativa privacy</a>
+            e acconsento al trattamento di nome e telefono per gestire la prenotazione.
+            Se ho indicato allergie o intolleranze, acconsento anche al trattamento di quel dato.
+            Dichiaro di essere maggiorenne.</span>
+        </label>
         <button class="btn-conf" id="invia" onclick="prenota()">Conferma prenotazione</button>
         <div class="errore" id="errore"></div>
       </div>
@@ -338,6 +533,19 @@ const CONTATTI = {
   orari:     'Aperti tutte le sere',
   instagram: 'baccowinespuglia'
 };
+
+/* ════════ DATI LEGALI — COMPILARE PRIMA DI PUBBLICARE ════════
+   Obbligatori per legge (art. 2250 c.c., D.lgs. 70/2003, GDPR).
+   Bacco li compila da Configurazione ▸ Dati fiscali; se pubblichi
+   il sito a mano, scrivili qui sotto.                              */
+const LEGALE = {
+  ragione: '{{RAGIONE}}',          // es. "Bacco Wines S.r.l." o "Mario Rossi — ditta individuale"
+  piva:    '{{PIVA}}',             // es. "01234567890"
+  sede:    '{{SEDE}}',             // sede legale completa, se diversa dal locale
+  email:   '{{EMAIL}}',            // indirizzo per esercitare i diritti privacy
+  rea:     '{{REA}}'               // facoltativo: "Iscritta al Registro Imprese di Bari, REA BA-123456"
+};
+/* ═════════════════════════════════════════════════════════════ */
 const PONTE  = '{{PONTE}}';
 const CHIAVE = '{{CHIAVE}}';
 /* ═════════════════════════════════ */
@@ -359,6 +567,50 @@ if (ig && CONTATTI.instagram) {
   ig.textContent = '@' + CONTATTI.instagram;
   ig.href = 'https://instagram.com/' + CONTATTI.instagram;
 }
+
+/* ── dati legali in pagina ── */
+const vuoto = v => !v || String(v).indexOf('{{') === 0;
+const L = {
+  ragione: vuoto(LEGALE.ragione) ? 'Bacco Wines' : LEGALE.ragione,
+  piva:    vuoto(LEGALE.piva)    ? ''            : LEGALE.piva,
+  sede:    vuoto(LEGALE.sede)    ? CONTATTI.indirizzo : LEGALE.sede,
+  email:   vuoto(LEGALE.email)   ? ''            : LEGALE.email,
+  rea:     vuoto(LEGALE.rea)     ? ''            : LEGALE.rea
+};
+
+const riempi = (cls, val) => document.querySelectorAll('.' + cls).forEach(e => { e.textContent = val });
+riempi('f-rag', L.ragione);
+riempi('f-sede', L.sede);
+riempi('f-piva', L.piva || '— (da indicare)');
+riempi('f-tel', CONTATTI.telefono);
+riempi('f-mail', L.email || 'scrivici in privato su Instagram o chiamaci al ' + CONTATTI.telefono);
+riempi('f-rea', L.rea ? L.rea : '');
+document.querySelectorAll('.f-rea').forEach(e => { if (L.rea) e.insertAdjacentHTML('afterend', '<br>') });
+document.querySelectorAll('.f-mail-a').forEach(a => {
+  if (L.email) { a.href = 'mailto:' + L.email; }
+  else { a.removeAttribute('href'); a.style.textDecoration = 'none'; a.style.color = 'inherit'; }
+});
+document.getElementById('f-anno').textContent = new Date().getFullYear();
+riempi('f-oggi', new Date().toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' }));
+document.getElementById('f-legale').innerHTML =
+  esc(L.ragione) + ' &middot; ' + esc(L.sede)
+  + (L.piva ? '<br>P.IVA ' + esc(L.piva) : '')
+  + (L.rea ? '<br>' + esc(L.rea) : '')
+  + (L.email ? '<br><a href="mailto:' + esc(L.email) + '" style="color:inherit">' + esc(L.email) + '</a>' : '');
+
+/* ── pagine informative ── */
+function mostraInfo(quale) {
+  document.querySelectorAll('.info').forEach(e => e.classList.remove('on'));
+  const el = document.getElementById('info-' + quale);
+  if (el) { el.classList.add('on'); el.scrollTop = 0; document.body.style.overflow = 'hidden'; }
+}
+function chiudiInfo() {
+  document.querySelectorAll('.info').forEach(e => e.classList.remove('on'));
+  if (!document.getElementById('modale').classList.contains('on')) document.body.style.overflow = '';
+}
+document.querySelectorAll('.info').forEach(ov => {
+  ov.addEventListener('click', e => { if (e.target === ov) chiudiInfo(); });
+});
 
 /* rivelazione allo scorrimento */
 const osserva = new IntersectionObserver(voci => {
@@ -455,11 +707,15 @@ async function prenota() {
     telefono: document.getElementById('telefono').value.trim(),
     note: document.getElementById('note').value.trim(),
     degustazioneId: SCELTO.id,
+    consenso: true,
+    consensoData: new Date().toISOString(),
     chiave: CHIAVE
   };
   document.getElementById('errore').style.display = 'none';
   if (!dati.nome)     return errore('Inserisci il tuo nome.');
   if (!dati.telefono) return errore('Serve un recapito telefonico per confermarti il posto.');
+  if (!document.getElementById('consenso').checked)
+    return errore('Per inviare la richiesta serve il consenso al trattamento dei dati.');
 
   const b = document.getElementById('invia');
   b.disabled = true; b.textContent = 'Invio in corso…';
@@ -478,7 +734,10 @@ async function prenota() {
 }
 
 document.getElementById('modale').addEventListener('click', e => { if (e.target.id === 'modale') chiudi(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') chiudi(); });
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  if (document.querySelector('.info.on')) chiudiInfo(); else chiudi();
+});
 
 caricaEventi();
 setInterval(caricaEventi, 120000);
